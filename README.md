@@ -174,3 +174,107 @@ by the correlation matrix, I ended up testing them in the model towards the end,
 some of them stayed as well.
 
 ![image](https://github.com/user-attachments/assets/b2315dea-86ed-40d7-b895-10c09e0d2c0e)
+
+
+7. Bivariate Model:
+The bivariate model of academic performance against the percentage of free meals
+revealed that 81.04% of the variation in academic performance across schools in
+California is explained by the percentage of free meals in each school. Given that this is
+the best indicator of a less secure financial status of the students’ that come to a school
+on average, I expected this variable to be the most significant predictor of academic
+performance. A secure financial status means a child is more likely to have the time to
+focus on academics, and is less concerned with financial burdens or the behaviours of
+adults that are caused due to financial burdens.
+
+![image](https://github.com/user-attachments/assets/ce5437fd-f8b9-4a45-8b40-8cc27d7541c7)
+
+
+8. Bivariate Regression Violations:
+Seems like there are no major violations of assumptions:
+- Since the points are mostly on the diagonal line in the q-q plot, the normality
+assumption of residuals holds.
+- Since there is no obvious pattern in the fitted vs residuals, the relationship between the
+predictors and the outcome is linear.
+
+![image](https://github.com/user-attachments/assets/e74b21eb-0f77-42a2-aa2a-8e4fc4c30cb6)
+![image](https://github.com/user-attachments/assets/52bafb56-352e-466f-b1ad-b3be5cc7b91c)
+![image](https://github.com/user-attachments/assets/2f6bbd4e-5550-4536-aa35-4a72082e2a56)
+![image](https://github.com/user-attachments/assets/a2db581e-9a60-4c2f-ba06-550f7cde80e2)
+
+
+9. Adding other variables:
+The Table below summarises the factors that influence academic performance at the
+school level.
+The Bivariate model already explained 81% of the variation with the Percentage of Free
+Meals per school—the relationship is negative and statistically significant. Since the pvalue
+is below 0.05(p=0.001), we can reject the null hypothesis, that there is no
+relationship between the percentage of free meals at a School and it’s academic
+performance. Furthermore, since it explains 81% of the variation, it is without a
+doubt and extremely strong predictor of academic performance.
+For every 1-unit (or 1 percent) increase in the proportion of students receiving free meals,
+the academic performance score is expected to decrease by 4.01 units, on average. \
+Next, some socio-economic factors were introduced to further improve the model.
+Variables suggesting the parents’ education level were available, and were added one by
+one, in the following order: % of parents who were college graduates(col_grad),% of
+parents who attended some amount of college(some_col), % of parents who went to high
+school(hsg), % of parents who haven’t gone to high school(not_hsg), % of parents who
+went to grad school(grad_sch). Before adding these to the model, VIF checks were done
+to ensure that that they did not cause multicollinearity.
+Of these, col_grad and hsg were not statistically significant, and while not_hsg was, it
+simply did not make a significant enough addition to the model to keep it in the model.
+Hence, in the spirit. Of being parsimonious, all three of these were dropped. Grad_sch
+was statistically significant and had a positive effect( regression coefficient = 1.37) and
+no_hsg was also statistically significant but had a negative impact on academic
+performance(regression coefficient =-0.69).
+
+
+Coefficients Table for Meals+ Educational variables:
+Model Performance
+• Residual Standard Error: 59.32 (on 391 degrees of freedom)
+Predictor
+Estimat
+e
+Std.
+Error
+t-value p-value Significance
+Intercept 836.8873 15.7107 53.268
+<
+0.0001
+***
+Meals (Free Lunch
+%)
+-3.3552 0.1540 -21.782
+<
+0.0001
+***
+College Graduate -0.0191 0.2372 -0.080 0.9359
+(Not
+Significant)
+Some College 0.6510 0.2833 2.298 0.0221 *
+High School Graduate 0.1466 0.2232 0.657 0.5117
+(Not
+Significant)
+No High School -0.6948 0.2193 -3.168 0.0017 **
+Graduate School 1.3727 0.3339 4.111
+<
+0.0001
+***
+• Multiple R-squared: 0.8283
+• Adjusted R-squared: 0.8257
+• F-statistic: 314.4 (on 6 and 391 DF)
+• Overall p-value: < 0.0001
+Next, the variables that indicated the school’s status on resources were looked into. For
+these, the indicative data was the percentage of teachers with full credentials(full). This
+had a statistically significant positive impact on the model, with a regression coefficient of
+1.44.
+Thereafter, in the final step, the variables that I didn’t think were particularly useful, but were
+significantly correlated in the matrix were added: English learner language(ell), enrolment rate, and
+whether the school was run year round or not. While ell and yr_rnd were statistically significant,
+the former had a small negative impact, while the latter had an extremely significant negative
+impact. This variable was indicative of the school’s resources, so it was definitely an oversight to
+assume it wasn’t as important. However, enrolment rate did not turn out to be statistically
+significant when it was added, so it was dropped.
+At this point, the model had an R squared of 85%, and included the variables: meals, not_hsg,
+grad_sch, fullCred_teachers, englishLanguageLearners, yr_rnd, of which fullCred_teachers and
+grad_sch have a positive impact, whereas the rest have a negative impact on the academic
+performance.
