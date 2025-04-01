@@ -1,4 +1,4 @@
-# schoolPolicy
+# Factors Affecting Student Academic Performance: Stats for Policy
 
 Statistical Analysis of School Performance
 Task:
