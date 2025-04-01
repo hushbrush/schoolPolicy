@@ -229,6 +229,9 @@ performance(regression coefficient =-0.69).
 
 
 Coefficients Table for Meals+ Educational variables:
+
+<img width="776" alt="Screenshot 2025-04-01 at 11 42 27 AM" src="https://github.com/user-attachments/assets/f1f569fb-bcc9-4a91-b599-a8c6242248d0" />
+
 Model Performance
 • Residual Standard Error: 59.32 (on 391 degrees of freedom)
 Predictor
@@ -278,3 +281,78 @@ At this point, the model had an R squared of 85%, and included the variables: me
 grad_sch, fullCred_teachers, englishLanguageLearners, yr_rnd, of which fullCred_teachers and
 grad_sch have a positive impact, whereas the rest have a negative impact on the academic
 performance.
+
+![image](https://github.com/user-attachments/assets/f3fa7ed5-d076-425b-96b9-21f89589ae8b)
+
+10. The interaction term:
+Since this data is at the college level rather than the student level, there is no way to know
+if the slight positive effect of the interaction term between the number of free meals and
+the number of students whose parents went to grad school is just an effect of a higher
+average due to certain students(of wealthier economic backgrounds) performing better,
+while those less privileged are performing worse, or if the overall effect of having a more
+diverse economic background in a school is actually beneficial to the academic
+performance. If it is the latter, a lot can be done to systematically add peer learning
+opportunities to the educational model, or to bring in educated.
+Another implication could also be that there has been a negative fluctuation in the
+economic standing of certain families.
+
+
+Final Model:
+
+<img width="581" alt="Screenshot 2025-04-01 at 11 44 55 AM" src="https://github.com/user-attachments/assets/3aca9c7f-01cb-4eb9-8686-9697e1587cc8" />
+
+The final regression model looks into multiple factors that affect academic performance. The
+model has an R-squared of 0.852, and an F-statistic of 320.4, which means it increases the meanmodel
+fairly well, and explains a large variation, indicating that 85% of the variance is explained
+by the variables included in the model. The p-value is <0.0001 which shows that it is highly
+unlikely that the observed relationships in the model are due to random chance, supporting the
+hypothesis that at least one of the variables is highly significant. The intercept is ~732, which is
+the expected academic score when all the variables are zero—this makes sense because most of
+the variables have a negative relationship with academic performance.
+While all the variables are statistically significant through their p-values, not_hsg is borderline
+significant. This, along with the low t-stat of -2.03 suggests that it is not a very important variable
+in the current model, however it has been kept for theoretical reasons.
+The F-statistic is 320.4, which is fairly large, supporting the hypothesis that the variables in
+In the final model, it appears that the most significant factor in academic performance for a school
+is whether they have the resources to support their students. This is determined by the regression
+coefficient of the variable yr_rnd -20.34 with a confidence interval of (-35.96 – -4.72), and a pvalue
+of 0.011. This means that it is statistically significant, and has a very large negative impact,
+meaning that if a school follows a year round schedule(which is an indication of load on
+infrastructure), it is likely that it will, on average, have academic performance that is 20.34 units
+lower than the schools that do not have a year round schedule.
+Other important predictors are the percentage of students receiving free meals, which has a
+negative impact of 2.79 units on academic performance for every unit increase in students
+Predictors
+Estimate
+s
+std.
+Error
+CI p
+(Intercept) 732.10 25.31 682.34 –
+781.87
+<0.00
+1
+meals -2.79 0.18 -3.15 – -2.43 <0.00
+1
+grad sch 1.09 0.36 0.39 – 1.79 0.002
+fullCred teachers 1.19 0.23 0.74 – 1.64 <0.00
+1
+not hsg -0.43 0.21 -0.84 – -0.01 0.043
+englishLanguageLearner
+s
+-0.58 0.20 -0.98 – -0.19 0.004
+yr rnd -20.34 7.94 -35.96 – -4.72 0.011
+meals × grad sch 0.02 0.01 0.00 – 0.04 0.027
+Observations 398
+R2 / R2 adjusted 0.852 / 0.849
+receiving free meals in a school, suggesting that higher poverty rates in a school lead to reduced
+academic performance. The extremely small but statistically significant interaction variable R
+squared suggests that schools with more economically diverse students do better than those with
+primarily low-income household students. This is in line with the rest of the model, but without
+data at the individual student level it is difficult to determine whether only the students with
+grad_sch educated parents’ are doing better and bringing up the average performance, or if there
+is a possible peer learning benefit here.
+
+
+
+
