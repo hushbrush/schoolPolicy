@@ -1,9 +1,13 @@
 # Factors Affecting Student Academic Performance: Stats for Policy
 
 Statistical Analysis of School Performance
+
+
 Task:
 Building a statistical model that explains the correlation of variables with academic
 performance.
+
+
 Central Policy Issue
 While school-level academic performance may not be the only indicator of future
 success, it is linked to access to scholarships, further educational opportunities, and
