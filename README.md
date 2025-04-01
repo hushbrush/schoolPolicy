@@ -354,5 +354,8 @@ grad_sch educated parents’ are doing better and bringing up the average perfor
 is a possible peer learning benefit here.
 
 
+Here is the same thing in a more readable format: 
+[LinearRegression_harshitaC](https://github.com/user-attachments/files/19553888/LinearRegression_harshitaC_advQuants.pdf)
+
 
 
